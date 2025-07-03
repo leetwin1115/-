@@ -1,4 +1,8 @@
-# -
+# -![leetwin1115 github io_-_main html](https://github.com/user-attachments/assets/481059d9-6119-4935-bcd0-e8d964b2e61a)
+![leetwin1115 github io_-_ho html](https://github.com/user-attachments/assets/3a228c10-6bb1-4556-a391-984f91937f2e)
+![leetwin1115 github io_-_jung html](https://github.com/user-attachments/assets/ffc4ea92-d16f-48e7-88ee-ee437333ccc9)
+![leetwin1115 github io_-_gwan html](https://github.com/user-attachments/assets/365486eb-8f79-488a-aaa2-98375020d40a)
+
 1. Document History (약 1분)
 안녕하세요. 저희는 팀 웹페이지를 제작하며 피그마 디자인 기반, HTML/CSS/JavaScript, 그리고 GitHub Pages를 활용해 실제 배포 가능한 웹사이트를 완성했습니다.
 처음에는 피그마로 전체 레이아웃과 디자인 콘셉트를 기획했고, 이후 HTML로 구조를 잡고, CSS로 스타일링을 통해 기능을 구현했습니다.
