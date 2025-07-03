@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>이관영</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+    * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0px;
+        height: 100%;
+    }
+
+    /* a blue color as a generic focus style */
+    button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .about {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about .div {
+        background-color: #ffffff;
+        width: 1440px;
+        height: 1788px;
+        position: relative;
+    }
+
+    .about .image {
+        position: absolute;
+        width: 508px;
+        height: 657px;
+        top: 213px;
+        left: 847px;
+        border-radius: 8px;
+        background: linear-gradient(0deg,
+                rgba(247, 247, 247, 1) 0%,
+                rgba(247, 247, 247, 1) 100%);
+    }
+
+    .about .overlap {
+        position: absolute;
+        width: 751px;
+        height: 657px;
+        top: 213px;
+        left: 50px;
+    }
+
+    .about .copy {
+        display: flex;
+        flex-direction: column;
+        width: 624px;
+        height: 657px;
+        align-items: flex-start;
+        gap: var(--variable-collection-spacing-s);
+        position: absolute;
+        top: 0;
+        left: 30px;
+    }
+
+    .about .text-wrapper {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: var(--title-font-family);
+        font-weight: var(--title-font-weight);
+        color: #000000;
+        font-size: var(--title-font-size);
+        letter-spacing: var(--title-letter-spacing);
+        line-height: var(--title-line-height);
+        font-style: var(--title-font-style);
+    }
+
+    .about .text-wrapper-2 {
+        position: relative;
+        align-self: stretch;
+        font-family: var(--subheading-font-family);
+        font-weight: var(--subheading-font-weight);
+        color: #828282;
+        font-size: var(--subheading-font-size);
+        letter-spacing: var(--subheading-letter-spacing);
+        line-height: var(--subheading-line-height);
+        font-style: var(--subheading-font-style);
+    }
+
+    .about .element {
+        position: absolute;
+        width: 717px;
+        height: 176px;
+        top: 453px;
+        left: 34px;
+        background-color: #f5f4fa;
+        border-radius: 22.47px;
+    }
+
+    .about .group {
+        top: 415px;
+        left: 1px;
+        position: absolute;
+        width: 77px;
+        height: 75px;
+    }
+
+    .about .overlap-group {
+        position: relative;
+        width: 75px;
+        height: 75px;
+        background-image: url(./img/union-2.svg);
+        background-size: 100% 100%;
+    }
+
+    .about .text-wrapper-3 {
+        position: absolute;
+        top: 23px;
+        left: 24px;
+        font-family: "Pretendard-ExtraBold", Helvetica;
+        font-weight: 800;
+        color: #ffffff;
+        font-size: 30px;
+        letter-spacing: 0;
+        line-height: 29.4px;
+        white-space: nowrap;
+    }
+
+    .about .p {
+        position: absolute;
+        width: 364px;
+        top: 490px;
+        left: 104px;
+        font-family: "Pretendard-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #000000;
+        font-size: 22.5px;
+        letter-spacing: 0;
+        line-height: 22.0px;
+        white-space: nowrap;
+    }
+
+    .about .element-2 {
+        position: absolute;
+        width: 718px;
+        height: 176px;
+        top: 208px;
+        left: 32px;
+        background-color: #f5f4fa;
+        border-radius: 22.47px;
+    }
+
+    .about .overlap-wrapper {
+        top: 169px;
+        left: 0;
+        position: absolute;
+        width: 77px;
+        height: 75px;
+    }
+
+    .about .div-wrapper {
+        position: relative;
+        width: 75px;
+        height: 75px;
+        background-image: url(./img/union.svg);
+        background-size: 100% 100%;
+    }
+
+    .about .text-wrapper-4 {
+        position: absolute;
+        width: 193px;
+        top: 248px;
+        left: 104px;
+        font-family: "Pretendard-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #000000;
+        font-size: 22.5px;
+        letter-spacing: 0;
+        line-height: 22.0px;
+        white-space: nowrap;
+    }
+
+    .about .INTP {
+        position: absolute;
+        width: 596px;
+        top: 285px;
+        left: 104px;
+        font-family: "NanumGothic-Regular", Helvetica;
+        font-weight: 400;
+        color: #383838;
+        font-size: 18.7px;
+        letter-spacing: 0;
+        line-height: 24.3px;
+    }
+
+    .about .text-wrapper-5 {
+        position: absolute;
+        width: 622px;
+        top: 525px;
+        left: 104px;
+        font-family: "NanumGothic-Regular", Helvetica;
+        font-weight: 400;
+        color: #383838;
+        font-size: 18.7px;
+        letter-spacing: 0;
+        line-height: 24.3px;
+    }
+
+    .about .navigation {
+        height: 164px;
+        top: 0;
+        position: absolute;
+        width: 1440px;
+        left: 0;
+        background-color: #ffffff;
+    }
+
+    .about .items {
+        width: 318px;
+        align-items: center;
+        justify-content: space-around;
+        gap: 48px;
+        top: 56px;
+        left: 1042px;
+        display: flex;
+        position: absolute;
+    }
+
+    .about .button {
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        width: 212px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 24px;
+        position: relative;
+        background-color: #000000;
+        border-radius: 8px;
+        box-shadow: var(--button-shadow);
+    }
+
+    .about .text-wrapper-6 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: var(--small-text-font-family);
+        font-weight: var(--small-text-font-weight);
+        color: #ffffff;
+        font-size: var(--small-text-font-size);
+        letter-spacing: var(--small-text-letter-spacing);
+        line-height: var(--small-text-line-height);
+        white-space: nowrap;
+        font-style: var(--small-text-font-style);
+    }
+
+    .about .text-wrapper-7 {
+        position: absolute;
+        height: 30px;
+        top: 66px;
+        left: 80px;
+        font-family: var(--body-text-font-family);
+        font-weight: var(--body-text-font-weight);
+        color: #000000;
+        font-size: var(--body-text-font-size);
+        letter-spacing: var(--body-text-letter-spacing);
+        line-height: var(--body-text-line-height);
+        white-space: nowrap;
+        font-style: var(--body-text-font-style);
+    }
+
+    .about .img {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 67px;
+        left: 297px;
+    }
+
+    .about .navigation-footer {
+        height: 264px;
+        top: 1524px;
+        position: absolute;
+        width: 1440px;
+        left: 0;
+        background-color: #ffffff;
+    }
+
+    .about .items-2 {
+        flex-direction: column;
+        width: 187px;
+        align-items: flex-end;
+        justify-content: center;
+        gap: var(--variable-collection-spacing-s);
+        top: 48px;
+        left: 736px;
+        display: flex;
+        position: absolute;
+    }
+
+    .about .text-wrapper-8 {
+        margin-top: -1.00px;
+        color: #000000;
+        position: relative;
+        align-self: stretch;
+        font-family: var(--small-text-font-family);
+        font-weight: var(--small-text-font-weight);
+        font-size: var(--small-text-font-size);
+        letter-spacing: var(--small-text-letter-spacing);
+        line-height: var(--small-text-line-height);
+        font-style: var(--small-text-font-style);
+    }
+
+    .about .text-wrapper-9 {
+        color: #444444;
+        position: relative;
+        align-self: stretch;
+        font-family: var(--small-text-font-family);
+        font-weight: var(--small-text-font-weight);
+        font-size: var(--small-text-font-size);
+        letter-spacing: var(--small-text-letter-spacing);
+        line-height: var(--small-text-line-height);
+        font-style: var(--small-text-font-style);
+    }
+
+    .about .items-3 {
+        flex-direction: column;
+        width: 187px;
+        align-items: flex-end;
+        justify-content: center;
+        gap: var(--variable-collection-spacing-s);
+        top: 48px;
+        left: 955px;
+        display: flex;
+        position: absolute;
+    }
+
+    .about .items-4 {
+        flex-direction: column;
+        width: 187px;
+        align-items: flex-end;
+        justify-content: center;
+        gap: var(--variable-collection-spacing-s);
+        top: 48px;
+        left: 1173px;
+        display: flex;
+        position: absolute;
+    }
+
+    .about .divider {
+        position: absolute;
+        width: 1280px;
+        height: 1px;
+        top: 0;
+        left: 80px;
+        object-fit: cover;
+    }
+
+    .about .text-wrapper-10 {
+        position: absolute;
+        height: 36px;
+        top: 58px;
+        left: 90px;
+        font-family: var(--subheading-font-family);
+        font-weight: var(--subheading-font-weight);
+        color: #000000;
+        font-size: var(--subheading-font-size);
+        letter-spacing: var(--subheading-letter-spacing);
+        line-height: var(--subheading-line-height);
+        white-space: nowrap;
+        font-style: var(--subheading-font-style);
+    }
+
+    .about .social-icons {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: var(--variable-collection-spacing-XS);
+        position: absolute;
+        top: 166px;
+        left: 80px;
+    }
+
+    .about .buttons-icon {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+    }
+
+    .about .icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        left: 8px;
+    }
+
+    .about .icon-2 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .about .icon-3 {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 3px;
+        left: 3px;
+    }
+
+    .about .icon-4 {
+        position: absolute;
+        width: 20px;
+        height: 14px;
+        top: 5px;
+        left: 2px;
+    }
+
+    .about .list {
+        flex-direction: column;
+        width: 1090px;
+        height: 232px;
+        align-items: center;
+        position: absolute;
+        top: 1236px;
+        left: 175px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .about .row {
+        align-items: flex-start;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .about .post {
+        width: 1081px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: #0000001a;
+    }
+
+    .about .user {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .about .avatar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+    }
+
+    .about .frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+    }
+
+    .about .title {
+        align-self: stretch;
+        font-family: "Roboto-Medium", Helvetica;
+        font-weight: 500;
+        color: #000000;
+        font-size: 14px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        position: relative;
+        margin-top: -1.00px;
+        letter-spacing: 0;
+    }
+
+    .about .icon-buttons {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .about .icon-5 {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin-top: -1.00px;
+        font-family: "Roboto-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .about .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .about .title-2 {
+        align-self: stretch;
+        font-family: "Roboto-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;
+        margin-top: -1.00px;
+        letter-spacing: 0;
+    }
+
+    .about .post-2 {
+        width: 1090px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: #0000001a;
+    }
+
+    .about .form {
+        display: flex;
+        width: 1090px;
+        height: 300px;
+        align-items: center;
+        gap: 60px;
+        padding: 60px 170px 60px 100px;
+        position: absolute;
+        top: 904px;
+        left: 175px;
+        background-color: #ffea524c;
+        border-radius: 22.47px;
+        overflow: hidden;
+    }
+
+    .about .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 24px;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+    }
+
+    .about .title-3 {
+        align-self: stretch;
+        font-family: "Roboto-Bold", Helvetica;
+        font-weight: 700;
+        color: #000000;
+        font-size: 40px;
+        line-height: 48px;
+        position: relative;
+        margin-top: -1.00px;
+        letter-spacing: 0;
+    }
+
+    .about .description {
+        position: relative;
+        align-self: stretch;
+        font-family: "Roboto-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 24px;
+    }
+
+    .about .list-2 {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+        margin-top: -34.00px;
+        margin-bottom: -34.00px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .about .input-wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 80px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .about .input {
+        width: 492px;
+        margin-right: -112.00px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+    }
+
+    .about .text-wrapper-11 {
+        align-self: stretch;
+        font-family: "Roboto-Medium", Helvetica;
+        font-weight: 500;
+        color: #000000;
+        font-size: 14px;
+        line-height: 20px;
+        position: relative;
+        margin-top: -1.00px;
+        letter-spacing: 0;
+    }
+
+    .about .textfield {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 12px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+        border-radius: 6px;
+        border: 1px solid;
+        border-color: #0000001a;
+    }
+
+    .about .text {
+        position: relative;
+        flex: 1;
+        height: 20px;
+        margin-top: -1.00px;
+        font-family: "Roboto-Regular", Helvetica;
+        font-weight: 400;
+        color: #00000080;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .about .input-2 {
+        width: 489px;
+        margin-right: -109.00px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+    }
+
+    .about .primary-wrapper {
+        all: unset;
+        box-sizing: border-box;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .about .primary {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #000000;
+        border-radius: 8px;
+    }
+
+    .about .title-4 {
+        width: fit-content;
+        font-family: "Roboto-Medium", Helvetica;
+        font-weight: 500;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+        position: relative;
+        margin-top: -1.00px;
+        letter-spacing: 0;
+    }
+
+    .about .vector {
+        position: absolute;
+        width: 1090px;
+        height: 1px;
+        top: 300px;
+        left: 0;
+        object-fit: cover;
+    }
+
+    :root {
+        --title-font-family: "Inter", Helvetica;
+        --title-font-weight: 700;
+        --title-font-size: 64px;
+        --title-letter-spacing: -1.28px;
+        --title-line-height: normal;
+        --title-font-style: normal;
+        --subheading-font-family: "Inter", Helvetica;
+        --subheading-font-weight: 400;
+        --subheading-font-size: 24px;
+        --subheading-letter-spacing: 0px;
+        --subheading-line-height: 150%;
+        --subheading-font-style: normal;
+        --small-text-font-family: "Inter", Helvetica;
+        --small-text-font-weight: 500;
+        --small-text-font-size: 16px;
+        --small-text-letter-spacing: 0px;
+        --small-text-line-height: 150%;
+        --small-text-font-style: normal;
+        --body-text-font-family: "Inter", Helvetica;
+        --body-text-font-weight: 500;
+        --body-text-font-size: 20px;
+        --body-text-letter-spacing: 0px;
+        --body-text-line-height: 150%;
+        --body-text-font-style: normal;
+        --button-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+        --variable-collection-spacing-s: 24px;
+        --variable-collection-spacing-XS: 8px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        let tempurl = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(tempurl).then(res => res.json()).then(data => {
+            let temp = data['temp'];
+            $('#temper').text(temp);
+        });
+
+        let miseurl = "http://spartacodingclub.shop/sparta_api/seoulair";
+        fetch(miseurl).then(res => res.json()).then(data => {
+            let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM'];
+            if (mise) {
+                $('#msg').text(mise);
+            } else {
+                $('#msg').text("데이터 없음");
+            }
+        })
+            .catch(err => {
+                console.error("미세먼지 데이터 가져오기 실패:", err);
+                $('#msg').text("오류 발생");
+            });
+    });
+</script>
+
+<body>
+    <div class="about">
+        <div class="div">
+            <div class="image"></div>
+            <div class="overlap">
+                <div class="copy">
+                    <div class="text-wrapper">이관영</div>
+                    <div class="text-wrapper-2">shotpo90@gmail.com</div>
+                </div>
+                <div class="element"></div>
+                <div class="group">
+                    <div class="overlap-group">
+                        <div class="text-wrapper-3">?!</div>
+                    </div>
+                </div>
+                <p class="p">저는 이런 동료들과 함께 성장하고 싶어요!</p>
+                <div class="element-2"></div>
+                <div class="overlap-wrapper">
+                    <div class="div-wrapper">
+                        <div class="text-wrapper-3">?!</div>
+                    </div>
+                </div>
+                <div class="text-wrapper-4">저는 이런 사람이에요!</div>
+                <p class="INTP">
+                    비전공자가 백엔드 개발자에 도전합니다.<br />게으르지만 창의성을 가진 ISFP라<br />남들이 생각하지 못한
+                    부분을 생각해내는 경우가 많아요.
+                </p>
+                <p class="text-wrapper-5">
+                    같이 있으면 시너지가 나는 동료, <br />다 함께 노력하는 팀, <br />질책보다는 칭찬을 우선하는 동료가 좋습니다.
+                </p>
+            </div>
+            <div class="navigation">
+                <div class="items">
+                    <button class="button">
+                        <div class="text-wrapper-6">Main</div>
+                    </button>
+                </div>
+                <div class="text-wrapper-7">Team 7 - Introduction</div>
+                <img class="img" src="img/1.svg" />
+            </div>
+            <div class="navigation-footer">
+                <div class="items-2">
+                    <div class="text-wrapper-8">Section</div>
+                    <div class="text-wrapper-9">Home</div>
+                    <div class="text-wrapper-9">Features</div>
+                    <div class="text-wrapper-9">Introduce</div>
+                </div>
+                <div class="items-3">
+                    <div class="text-wrapper-8">FAQS</div>
+                    <div class="text-wrapper-9">Q&amp;A</div>
+                    <div class="text-wrapper-9">Guestbook</div>
+                    <div class="text-wrapper-9">Abouts</div>
+                </div>
+                <div class="items-4">
+                    <div class="text-wrapper-8">현재 날씨 : <span id="msg">미세먼지</span></div>
+                    <div class="text-wrapper-9">기온 : <span id="temper">20.00</span>도</div>
+                </div>
+            <img class="divider" src="img/divider.svg" />
+            <div class="text-wrapper-10">Contact Us</div>
+            <div class="social-icons">
+                <div class="buttons-icon">
+                    <div class="icon"><img class="icon-2" src="img/image.svg" /></div>
+                </div>
+                <div class="buttons-icon">
+                    <div class="icon"><img class="icon-3" src="img/icon.svg" /></div>
+                </div>
+                <div class="buttons-icon">
+                    <div class="icon"><img class="icon-4" src="img/icon-2.svg" /></div>
+                </div>
+                <div class="buttons-icon">
+                    <div class="icon"><img class="icon-2" src="img/icon-3.svg" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="row">
+                <div class="post">
+                    <div class="user">
+                        <div class="avatar">
+                            <div class="frame">
+                                <div class="title">이건</div>
+                            </div>
+                            <div class="icon-buttons">
+                                <div class="icon-5">•••</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <div class="title-2">감자가 덜 익었어요</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="post-2">
+                    <div class="user">
+                        <div class="avatar">
+                            <div class="frame">
+                                <div class="title">이건</div>
+                            </div>
+                            <div class="icon-buttons">
+                                <div class="icon-5">•••</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <div class="title-2">당근 싫어요</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="container">
+                <div class="title-3">의견을 남겨주세요</div>
+                <p class="description">새로운 방명록은 언제나 환영이야(익명은 안된단다)</p>
+            </div>
+            <div class="list-2">
+                <div class="input-wrapper">
+                    <div class="input">
+                        <div class="text-wrapper-11">Name</div>
+                        <div class="textfield">
+                            <div class="text">Enter your name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-2">
+                        <div class="text-wrapper-11">Comment</div>
+                        <div class="textfield">
+                            <div class="text">Enter your Comment</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="primary-wrapper">
+                    <div class="primary">
+                        <div class="title-4">Send Comment</div>
+                    </div>
+                </button>
+            </div>
+            <img class="vector" src="img/vector-200.svg" />
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
