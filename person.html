@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team 7 - NAME !!</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        * {
+            font-family: 'Pretendard', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 전체 콘텐츠를 감싸고 중앙 정렬하는 컨테이너 */
+        .page-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-container .btn {
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        /* 헤더 (상단 네비게이션) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-title-group {
+            display: flex;
+            /* 그룹 내의 제목과 이미지를 나란히 배치 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            gap: 10px;
+            /* 제목과 이미지 사이의 간격 */
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 메인 콘텐츠 영역 */
+        main {
+            padding: 60px 0;
+        }
+
+        /* 자기소개 섹션 (Flexbox로 재구성) */
+        .about-section {
+            display: flex;
+            gap: 40px;
+            /* 텍스트와 이미지 사이 간격 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            margin-bottom: 80px;
+        }
+
+        .about-text {
+            flex: 1;
+            /* 남는 공간을 모두 차지 */
+        }
+
+        .about-text h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1.28px;
+            margin-bottom: 12px;
+        }
+
+        .about-text .subtitle {
+            font-size: 24px;
+            color: #828282;
+            margin-bottom: 40px;
+        }
+
+        /* 아이콘을 감싸는 div의 기본 스타일 (위치, 크기 등) */
+        .about-item .icon-container {
+            position: absolute;
+            top: -15px;
+            /* 위치 미세 조정 */
+            left: -15px;
+            /* 위치 미세 조정 */
+
+            width: 80px;
+            /* 크기 */
+            height: 80px;
+            border-radius: 50%;
+            /* 원 모양 */
+
+            /* 텍스트를 중앙에 배치 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* 텍스트 스타일 */
+            color: white;
+            font-size: 30px;
+            font-weight: 800;
+
+            /* 꼬리보다 위에 보이도록 z-index 설정 */
+            z-index: 2;
+        }
+
+        /* 말풍선 꼬리 부분 (::after 가상 요소로 생성) */
+        .about-item .icon-container::after {
+            content: '';
+            /* 필수 속성 */
+            position: absolute;
+            width: 25px;
+            /* 꼬리 크기 */
+            height: 25px;
+
+            /* 위치 (원의 좌하단에 배치) */
+            bottom: 12px;
+            left: 12px;
+
+            transform: rotate(45deg);
+            /* 사각형을 45도 회전시켜 마름모(꼬리) 모양으로 만듦 */
+
+            /* 원보다 뒤에 보이도록 z-index 설정 */
+            z-index: -1;
+        }
+
+        /* 노란색 아이콘 스타일 */
+        .icon-container.yellow {
+            background-color: #FFC700;
+            /* 이미지의 노란색 */
+        }
+
+        .icon-container.yellow::after {
+            background-color: #FFC700;
+            /* 꼬리도 같은 색으로 */
+        }
+
+        /* 파란색 아이콘 스타일 */
+        .icon-container.blue {
+            background-color: #4A90E2;
+            /* 이미지의 파란색 */
+        }
+
+        .icon-container.blue::after {
+            background-color: #4A90E2;
+            /* 꼬리도 같은 색으로 */
+        }
+
+        .about-item {
+            background-color: #f5f4fa;
+            border-radius: 16px;
+            padding: 24px;
+            padding-left: 80px;
+            /* 아이콘 공간 확보 */
+            position: relative;
+            margin-top: 70px;
+            margin-bottom: 24px;
+        }
+
+        .about-item h3 {
+            font-size: 22.5px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .about-item p {
+            font-size: 18.7px;
+            color: #383838;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .about-image {
+            flex-basis: 508px;
+            /* 이미지 고정 너비 */
+            height: 657px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+        }
+
+        /* == 방명록 폼 섹션 CSS (2단 레이아웃으로 변경) == */
+        .guestbook-form-section {
+            background-color: #ffea524c;
+            border-radius: 22px;
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+
+        /* 2단 레이아웃을 위한 Flex 컨테이너 */
+        .guestbook-layout-container {
+            display: flex;
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            gap: 60px;
+            /* 왼쪽과 오른쪽 영역 사이의 간격 */
+        }
+
+        /* 왼쪽 영역 (제목) */
+        .form-title-area {
+            /* 차지할 공간 비율 */
+            flex: 1;
+            /* 박스 안의 텍스트를 가운데로 정렬 */
+            text-align: center;
+        }
+
+        .form-title-area h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-title-area .description {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* 오른쪽 영역 (입력 폼) */
+        .form-input-area {
+            flex: 1.5;
+            /* 차지할 공간 비율 (입력창이 좀 더 넓도록) */
+        }
+
+        .form-input-area label {
+            font-weight: 700;
+        }
+
+        .form-input-area .form-control {
+            border-radius: 10px;
+        }
+
+        .form-input-area .btn {
+            margin-top: 20px;
+            margin-right: auto;
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        /* 방명록 목록 섹션 */
+        #comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /* 댓글 카드 사이 간격 */
+        }
+
+        .card {
+            border: 1px solid #e0e0e0;
+        }
+
+        .card-header {
+            font-weight: 600;
+            background-color: #fafafa;
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDkeRu2LiYD6bJJU7ks2IfVTG1Zm-OeSBQ",
+            authDomain: "sparta-3a23a.firebaseapp.com",
+            projectId: "sparta-3a23a",
+            storageBucket: "sparta-3a23a.firebasestorage.app",
+            messagingSenderId: "308407028495",
+            appId: "1:308407028495:web:9fde7461a347bfdfc28c7a",
+            measurementId: "G-V1R8BGWDQS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // 기능 1: 댓글 카드 HTML을 생성하는 함수
+        function createCommentCard(name, comment) {
+            return `
+                <div class="card">
+                    <div class="card-header">${name}</div>
+                    <div class="card-body">
+                        <p class="card-text">${comment}</p>
+                    </div>
+                </div>`;
+        }
+
+        // 기능 2: Firestore에서 모든 댓글을 가져와 화면에 표시하는 함수
+        async function displayComments() {
+            const commentList = $('#comment-list');
+            commentList.empty();
+
+            const q = query(collection(db, "hoyong"), orderBy("timestamp", "desc"));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const item = doc.data();
+                const cardHtml = createCommentCard(item.name, item.comment);
+                commentList.append(cardHtml);
+            });
+        }
+
+        // 페이지가 로드되면 댓글 목록을 표시
+        $(document).ready(function () {
+            displayComments();
+        });
+
+        // 기능 3: 'Send Comment' 버튼 클릭 이벤트
+        $("#postingbtn").click(async function () {
+            const name = $('#name').val();
+            const comment = $('#comment').val();
+            const button = $(this);
+
+            if (!name || !comment) {
+                alert("이름과 댓글을 모두 입력해주세요.");
+                return;
+            }
+
+            button.prop('disabled', true).text('전송 중...');
+
+            const doc = {
+                'name': name,
+                'comment': comment,
+                'timestamp': new Date()
+            };
+
+            try {
+                await addDoc(collection(db, "hoyong"), doc);
+
+                $('#name').val('');
+                $('#comment').val('');
+
+                const newCardHtml = createCommentCard(name, comment);
+                $('#comment-list').prepend(newCardHtml);
+
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert("댓글 등록에 실패했습니다.");
+            } finally {
+                button.prop('disabled', false).text('Send Comment');
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <div class="header-title-group">
+                <div class="header-title">Team 7 - Introduction</div>
+                <img class="img" src="img/1.svg ... " />
+            </div>
+            <a href="#" class="btn btn-dark">Main</a>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <!-- 자기소개 텍스트 영역 -->
+                <div class="about-text">
+                    <h1>이호용</h1>
+                    <p class="subtitle">velog.io/@ghdyd6625</p>
+
+                    <div class="about-item">
+                        <!-- 아이콘 -->
+                        <div class="icon-container yellow">?!</div>
+
+                        <h3>저는 이런 사람이에요!</h3>
+                        <p>
+                            저는 호기심이 많고 논리적인 사고를 좋아하는 INTP 유형이에요.<br />
+                            조금은 조용할 수도 있지만, 누군가와 아이디어를 나누는 순간 가장 활발해지는 사람이에요!
+                        </p>
+                    </div>
+
+                    <!-- 두 번째 항목: 파란색 아이콘 -->
+                    <div class="about-item">
+                        <!-- 아이콘 -->
+                        <div class="icon-container blue">?!</div>
+
+                        <h3>저는 이런 동료들과 함께 성장하고 싶어요!</h3>
+                        <p>
+                            실수가 있어도 괜찮다고 말해주는 팀, 모르는 걸 편하게 물어볼 수 있는 분위기에서 더 잘 배울 수 있다고 믿습니다.<br />
+                            각자의 방식은 달라도 같은 목표를 향해 함께 걸어가는 팀에서 최선을 다하고 싶어요!
+                        </p>
+                    </div>
+                </div>
+                <!-- 자기소개 이미지 영역 -->
+                <div class="about-image">
+                    <!-- 이미지가 있다면 여기에 <img src="..."> 태그를 추가하세요 -->
+                </div>
+            </section>
+
+            <!-- 방명록 입력 폼 (2단 레이아웃으로 재구성) -->
+            <section class="guestbook-form-section">
+                <div class="guestbook-layout-container">
+                    <!-- 왼쪽 영역: 제목 -->
+                    <div class="form-title-area">
+                        <h2>의견을 남겨주세요</h2>
+                        <p class="description">새로운 방명록은 언제나 환영이야 (익명은 안된단다)</p>
+                    </div>
+                    <!-- 오른쪽 영역: 입력 폼 -->
+                    <div class="form-input-area">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Comment</label>
+                                <input type="text" class="form-control" id="comment" placeholder="Enter your comment">
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button id="postingbtn" type="button" class="btn btn-dark">Send Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 방명록 목록 -->
+            <section id="comment-list-section">
+                <div id="comment-list">
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>
