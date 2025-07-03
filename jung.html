@@ -1,1011 +1,455 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jung-Eun Park</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<style>
-    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-    * {
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-    }
-
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
-
-    /* a blue color as a generic focus style */
-    button:focus-visible {
-        outline: 2px solid #4a90e2 !important;
-        outline: -webkit-focus-ring-color auto 5px !important;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .about {
-        background-color: #ffffff;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .about .div {
-        background-color: #ffffff;
-        width: 1440px;
-        height: 1788px;
-        position: relative;
-    }
-
-    .about .image {
-        position: absolute;
-        width: 508px;
-        height: 657px;
-        top: 213px;
-        left: 847px;
-        border-radius: 8px;
-        background: linear-gradient(0deg,
-                rgba(247, 247, 247, 1) 0%,
-                rgba(247, 247, 247, 1) 100%);
-    }
-
-    .about .overlap {
-        position: absolute;
-        width: 751px;
-        height: 657px;
-        top: 213px;
-        left: 50px;
-    }
-
-    .about .copy {
-        display: flex;
-        flex-direction: column;
-        width: 624px;
-        height: 657px;
-        align-items: flex-start;
-        gap: var(--variable-collection-spacing-s);
-        position: absolute;
-        top: 0;
-        left: 30px;
-    }
-
-    .about .text-wrapper {
-        position: relative;
-        align-self: stretch;
-        margin-top: -1.00px;
-        font-family: var(--title-font-family);
-        font-weight: var(--title-font-weight);
-        color: #000000;
-        font-size: var(--title-font-size);
-        letter-spacing: var(--title-letter-spacing);
-        line-height: var(--title-line-height);
-        font-style: var(--title-font-style);
-    }
-
-    .about .text-wrapper-2 {
-        position: relative;
-        align-self: stretch;
-        font-family: var(--subheading-font-family);
-        font-weight: var(--subheading-font-weight);
-        color: #828282;
-        font-size: var(--subheading-font-size);
-        letter-spacing: var(--subheading-letter-spacing);
-        line-height: var(--subheading-line-height);
-        text-decoration: underline;
-        font-style: var(--subheading-font-style);
-    }
-
-    .about .element {
-        position: absolute;
-        width: 717px;
-        height: 176px;
-        top: 453px;
-        left: 34px;
-        background-color: #f5f4fa;
-        border-radius: 22.47px;
-    }
-
-    .about .group {
-        top: 415px;
-        left: 1px;
-        position: absolute;
-        width: 77px;
-        height: 75px;
-    }
-
-    .about .overlap-group {
-        position: relative;
-        width: 75px;
-        height: 75px;
-        background-image: url(./img/image.svg);
-        background-size: 100% 100%;
-    }
-
-    .about .text-wrapper-3 {
-        position: absolute;
-        top: 23px;
-        left: 24px;
-        font-family: "Pretendard-ExtraBold", Helvetica;
-        font-weight: 800;
-        color: #ffffff;
-        font-size: 30px;
-        letter-spacing: 0;
-        line-height: 29.4px;
-        white-space: nowrap;
-    }
-
-    .about .p {
-        position: absolute;
-        width: 364px;
-        top: 490px;
-        left: 104px;
-        font-family: "Pretendard-SemiBold", Helvetica;
-        font-weight: 600;
-        color: #000000;
-        font-size: 22.5px;
-        letter-spacing: 0;
-        line-height: 22.0px;
-        white-space: nowrap;
-    }
-
-    .about .element-2 {
-        position: absolute;
-        width: 718px;
-        height: 176px;
-        top: 208px;
-        left: 32px;
-        background-color: #f5f4fa;
-        border-radius: 22.47px;
-    }
-
-    .about .overlap-wrapper {
-        top: 169px;
-        left: 0;
-        position: absolute;
-        width: 77px;
-        height: 75px;
-    }
-
-    .about .div-wrapper {
-        position: relative;
-        width: 75px;
-        height: 75px;
-        background-image: url(./img/union.svg);
-        background-size: 100% 100%;
-    }
-
-    .about .text-wrapper-4 {
-        position: absolute;
-        width: 193px;
-        top: 248px;
-        left: 104px;
-        font-family: "Pretendard-SemiBold", Helvetica;
-        font-weight: 600;
-        color: #000000;
-        font-size: 22.5px;
-        letter-spacing: 0;
-        line-height: 22.0px;
-        white-space: nowrap;
-    }
-
-    .about .INTJ {
-        position: absolute;
-        width: 611px;
-        top: 285px;
-        left: 104px;
-        font-family: "NanumGothic-Regular", Helvetica;
-        font-weight: 400;
-        color: #383838;
-        font-size: 18.7px;
-        letter-spacing: 0;
-        line-height: 24.3px;
-    }
-
-    .about .text-wrapper-5 {
-        position: absolute;
-        width: 475px;
-        top: 523px;
-        left: 104px;
-        font-family: "NanumGothic-Regular", Helvetica;
-        font-weight: 400;
-        color: #383838;
-        font-size: 18.7px;
-        letter-spacing: 0;
-        line-height: 24.3px;
-    }
-
-    .about .navigation {
-        height: 164px;
-        top: 0;
-        position: absolute;
-        width: 1440px;
-        left: 0;
-        background-color: #ffffff;
-    }
-
-    .about .items {
-        width: 318px;
-        align-items: center;
-        justify-content: space-around;
-        gap: 48px;
-        top: 56px;
-        left: 1042px;
-        display: flex;
-        position: absolute;
-    }
-
-    .about .button {
-        all: unset;
-        box-sizing: border-box;
-        display: flex;
-        width: 212px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 14px 24px;
-        position: relative;
-        background-color: #000000;
-        border-radius: 8px;
-        box-shadow: var(--button-shadow);
-    }
-
-    .about .text-wrapper-6 {
-        position: relative;
-        width: fit-content;
-        margin-top: -1.00px;
-        font-family: var(--small-text-font-family);
-        font-weight: var(--small-text-font-weight);
-        color: #ffffff;
-        font-size: var(--small-text-font-size);
-        letter-spacing: var(--small-text-letter-spacing);
-        line-height: var(--small-text-line-height);
-        white-space: nowrap;
-        font-style: var(--small-text-font-style);
-    }
-
-    .about .text-wrapper-7 {
-        position: absolute;
-        height: 30px;
-        top: 66px;
-        left: 80px;
-        font-family: var(--body-text-font-family);
-        font-weight: var(--body-text-font-weight);
-        color: #000000;
-        font-size: var(--body-text-font-size);
-        letter-spacing: var(--body-text-letter-spacing);
-        line-height: var(--body-text-line-height);
-        white-space: nowrap;
-        font-style: var(--body-text-font-style);
-    }
-
-    .about .img {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        top: 67px;
-        left: 297px;
-    }
-
-    .about .navigation-footer {
-        height: 264px;
-        top: 1524px;
-        position: absolute;
-        width: 1440px;
-        left: 0;
-        background-color: #ffffff;
-    }
-
-    .about .items-2 {
-        flex-direction: column;
-        width: 187px;
-        align-items: flex-end;
-        justify-content: center;
-        gap: var(--variable-collection-spacing-s);
-        top: 48px;
-        left: 736px;
-        display: flex;
-        position: absolute;
-    }
-
-    .about .text-wrapper-8 {
-        margin-top: -1.00px;
-        color: #000000;
-        position: relative;
-        align-self: stretch;
-        font-family: var(--small-text-font-family);
-        font-weight: var(--small-text-font-weight);
-        font-size: var(--small-text-font-size);
-        letter-spacing: var(--small-text-letter-spacing);
-        line-height: var(--small-text-line-height);
-        font-style: var(--small-text-font-style);
-    }
-
-    .about .text-wrapper-9 {
-        color: #444444;
-        position: relative;
-        align-self: stretch;
-        font-family: var(--small-text-font-family);
-        font-weight: var(--small-text-font-weight);
-        font-size: var(--small-text-font-size);
-        letter-spacing: var(--small-text-letter-spacing);
-        line-height: var(--small-text-line-height);
-        font-style: var(--small-text-font-style);
-    }
-
-    .about .items-3 {
-        flex-direction: column;
-        width: 187px;
-        align-items: flex-end;
-        justify-content: center;
-        gap: var(--variable-collection-spacing-s);
-        top: 48px;
-        left: 955px;
-        display: flex;
-        position: absolute;
-    }
-
-    .about .items-4 {
-        flex-direction: column;
-        width: 187px;
-        align-items: flex-end;
-        justify-content: center;
-        gap: var(--variable-collection-spacing-s);
-        top: 48px;
-        left: 1173px;
-        display: flex;
-        position: absolute;
-    }
-
-    .about .divider {
-        position: absolute;
-        width: 1280px;
-        height: 1px;
-        top: 0;
-        left: 80px;
-        object-fit: cover;
-    }
-
-    .about .text-wrapper-10 {
-        position: absolute;
-        height: 36px;
-        top: 58px;
-        left: 90px;
-        font-family: var(--subheading-font-family);
-        font-weight: var(--subheading-font-weight);
-        color: #000000;
-        font-size: var(--subheading-font-size);
-        letter-spacing: var(--subheading-letter-spacing);
-        line-height: var(--subheading-line-height);
-        white-space: nowrap;
-        font-style: var(--subheading-font-style);
-    }
-
-    .about .social-icons {
-        display: inline-flex;
-        align-items: flex-start;
-        gap: var(--variable-collection-spacing-XS);
-        position: absolute;
-        top: 166px;
-        left: 80px;
-    }
-
-    .about .buttons-icon {
-        position: relative;
-        width: 40px;
-        height: 40px;
-        border-radius: 4px;
-    }
-
-    .about .icon {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        top: 8px;
-        left: 8px;
-    }
-
-    .about .icon-2 {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top: 2px;
-        left: 2px;
-    }
-
-    .about .icon-3 {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        top: 3px;
-        left: 3px;
-    }
-
-    .about .icon-4 {
-        position: absolute;
-        width: 20px;
-        height: 14px;
-        top: 5px;
-        left: 2px;
-    }
-
-    .about .list {
-        flex-direction: column;
-        width: 991px;
-        height: 232px;
-        align-items: center;
-        position: absolute;
-        top: 1238px;
-        left: 226px;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .about .row {
-        align-items: flex-start;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .about .post {
-        width: 1059px;
-        margin-left: -34.00px;
-        margin-right: -34.00px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid;
-        border-color: #0000001a;
-    }
-
-    .about .user {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .about .avatar {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-    }
-
-    .about .frame {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-    }
-
-    .about .title {
-        align-self: stretch;
-        font-family: "Roboto-Medium", Helvetica;
-        font-weight: 500;
-        color: #000000;
-        font-size: 14px;
-        line-height: 20px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        position: relative;
-        margin-top: -1.00px;
-        letter-spacing: 0;
-    }
-
-    .about .icon-buttons {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .about .icon-5 {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        margin-top: -1.00px;
-        font-family: "Roboto-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 16px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: 24px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-    }
-
-    .about .text-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 12px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .about .title-2 {
-        align-self: stretch;
-        font-family: "Roboto-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 16px;
-        line-height: 24px;
-        position: relative;
-        margin-top: -1.00px;
-        letter-spacing: 0;
-    }
-
-    .about .post-2 {
-        width: 1067px;
-        margin-left: -38.00px;
-        margin-right: -38.00px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid;
-        border-color: #0000001a;
-    }
-
-    .about .form {
-        display: flex;
-        width: 1090px;
-        height: 300px;
-        align-items: center;
-        gap: 60px;
-        padding: 60px 170px 60px 100px;
-        position: absolute;
-        top: 904px;
-        left: 175px;
-        background-color: #ffea524c;
-        border-radius: 22.47px;
-        overflow: hidden;
-    }
-
-    .about .container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 24px;
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-    }
-
-    .about .title-3 {
-        align-self: stretch;
-        font-family: "Roboto-Bold", Helvetica;
-        font-weight: 700;
-        color: #000000;
-        font-size: 40px;
-        line-height: 48px;
-        position: relative;
-        margin-top: -1.00px;
-        letter-spacing: 0;
-    }
-
-    .about .description {
-        position: relative;
-        align-self: stretch;
-        font-family: "Roboto-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 24px;
-    }
-
-    .about .list-2 {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-        margin-top: -34.00px;
-        margin-bottom: -34.00px;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .about .input-wrapper {
-        display: flex;
-        align-items: flex-start;
-        gap: 80px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .about .input {
-        width: 492px;
-        margin-right: -112.00px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 4px;
-        position: relative;
-    }
-
-    .about .text-wrapper-11 {
-        align-self: stretch;
-        font-family: "Roboto-Medium", Helvetica;
-        font-weight: 500;
-        color: #000000;
-        font-size: 14px;
-        line-height: 20px;
-        position: relative;
-        margin-top: -1.00px;
-        letter-spacing: 0;
-    }
-
-    .about .textfield {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 8px 12px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-        background-color: #ffffff;
-        border-radius: 6px;
-        border: 1px solid;
-        border-color: #0000001a;
-    }
-
-    .about .text {
-        position: relative;
-        flex: 1;
-        height: 20px;
-        margin-top: -1.00px;
-        font-family: "Roboto-Regular", Helvetica;
-        font-weight: 400;
-        color: #00000080;
-        font-size: 14px;
-        letter-spacing: 0;
-        line-height: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-    }
-
-    .about .input-2 {
-        width: 489px;
-        margin-right: -109.00px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 4px;
-        position: relative;
-    }
-
-    .about .primary-wrapper {
-        all: unset;
-        box-sizing: border-box;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .about .primary {
-        display: flex;
-        flex-direction: column;
-        width: 240px;
-        align-items: center;
-        justify-content: center;
-        padding: 12px;
-        position: relative;
-        flex: 0 0 auto;
-        background-color: #000000;
-        border-radius: 8px;
-    }
-
-    .about .title-4 {
-        width: fit-content;
-        font-family: "Roboto-Medium", Helvetica;
-        font-weight: 500;
-        color: #ffffff;
-        font-size: 16px;
-        line-height: 24px;
-        white-space: nowrap;
-        position: relative;
-        margin-top: -1.00px;
-        letter-spacing: 0;
-    }
-
-    .about .vector {
-        position: absolute;
-        width: 1090px;
-        height: 1px;
-        top: 300px;
-        left: 0;
-        object-fit: cover;
-    }
-
-    :root {
-        --title-font-family: "Inter", Helvetica;
-        --title-font-weight: 700;
-        --title-font-size: 64px;
-        --title-letter-spacing: -1.28px;
-        --title-line-height: normal;
-        --title-font-style: normal;
-        --subheading-font-family: "Inter", Helvetica;
-        --subheading-font-weight: 400;
-        --subheading-font-size: 24px;
-        --subheading-letter-spacing: 0px;
-        --subheading-line-height: 150%;
-        --subheading-font-style: normal;
-        --small-text-font-family: "Inter", Helvetica;
-        --small-text-font-weight: 500;
-        --small-text-font-size: 16px;
-        --small-text-letter-spacing: 0px;
-        --small-text-line-height: 150%;
-        --small-text-font-style: normal;
-        --body-text-font-family: "Inter", Helvetica;
-        --body-text-font-weight: 500;
-        --body-text-font-size: 20px;
-        --body-text-letter-spacing: 0px;
-        --body-text-line-height: 150%;
-        --body-text-font-style: normal;
-        --button-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-        --variable-collection-spacing-s: 24px;
-        --variable-collection-spacing-XS: 8px;
-    }
-</style>
-
-<script>
-    $(document).ready(function () {
-        let tempurl = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-        fetch(tempurl).then(res => res.json()).then(data => {
-            let temp = data['temp'];
-            $('#temper').text(temp);
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        * {
+            font-family: 'Pretendard', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 전체 콘텐츠를 감싸고 중앙 정렬하는 컨테이너 */
+        .page-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-container .btn {
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        /* 헤더 (상단 네비게이션) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-title-group {
+            display: flex;
+            /* 그룹 내의 제목과 이미지를 나란히 배치 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            gap: 10px;
+            /* 제목과 이미지 사이의 간격 */
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 메인 콘텐츠 영역 */
+        main {
+            padding: 60px 0;
+        }
+
+        /* 자기소개 섹션 (Flexbox로 재구성) */
+        .about-section {
+            display: flex;
+            gap: 40px;
+            /* 텍스트와 이미지 사이 간격 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            margin-bottom: 80px;
+        }
+
+        .about-text {
+            flex: 1;
+            /* 남는 공간을 모두 차지 */
+        }
+
+        .about-text h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1.28px;
+            margin-bottom: 12px;
+        }
+
+        .about-text .subtitle {
+            font-size: 24px;
+            color: #828282;
+            margin-bottom: 40px;
+        }
+
+        /* 아이콘을 감싸는 div의 기본 스타일 (위치, 크기 등) */
+        .about-item .icon-container {
+            position: absolute;
+            top: -15px;
+            /* 위치 미세 조정 */
+            left: -15px;
+            /* 위치 미세 조정 */
+
+            width: 80px;
+            /* 크기 */
+            height: 80px;
+            border-radius: 50%;
+            /* 원 모양 */
+
+            /* 텍스트를 중앙에 배치 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* 텍스트 스타일 */
+            color: white;
+            font-size: 30px;
+            font-weight: 800;
+
+            /* 꼬리보다 위에 보이도록 z-index 설정 */
+            z-index: 2;
+        }
+
+        /* 말풍선 꼬리 부분 (::after 가상 요소로 생성) */
+        .about-item .icon-container::after {
+            content: '';
+            /* 필수 속성 */
+            position: absolute;
+            width: 25px;
+            /* 꼬리 크기 */
+            height: 25px;
+
+            /* 위치 (원의 좌하단에 배치) */
+            bottom: 12px;
+            left: 12px;
+
+            transform: rotate(45deg);
+            /* 사각형을 45도 회전시켜 마름모(꼬리) 모양으로 만듦 */
+
+            /* 원보다 뒤에 보이도록 z-index 설정 */
+            z-index: -1;
+        }
+
+        /* 노란색 아이콘 스타일 */
+        .icon-container.yellow {
+            background-color: #FFC700;
+            /* 이미지의 노란색 */
+        }
+
+        .icon-container.yellow::after {
+            background-color: #FFC700;
+            /* 꼬리도 같은 색으로 */
+        }
+
+        /* 파란색 아이콘 스타일 */
+        .icon-container.blue {
+            background-color: #4A90E2;
+            /* 이미지의 파란색 */
+        }
+
+        .icon-container.blue::after {
+            background-color: #4A90E2;
+            /* 꼬리도 같은 색으로 */
+        }
+
+        .about-item {
+            background-color: #f5f4fa;
+            border-radius: 16px;
+            padding: 24px;
+            padding-left: 80px;
+            /* 아이콘 공간 확보 */
+            position: relative;
+            margin-top: 70px;
+            margin-bottom: 24px;
+        }
+
+        .about-item h3 {
+            font-size: 22.5px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .about-item p {
+            font-size: 18.7px;
+            color: #383838;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .about-image {
+            flex-basis: 508px;
+            /* 이미지 고정 너비 */
+            height: 657px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+        }
+
+        /* == 방명록 폼 섹션 CSS (2단 레이아웃으로 변경) == */
+        .guestbook-form-section {
+            background-color: #ffea524c;
+            border-radius: 22px;
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+
+        /* 2단 레이아웃을 위한 Flex 컨테이너 */
+        .guestbook-layout-container {
+            display: flex;
+            align-items: center;
+            /* 수직 중앙 정렬 */
+            gap: 60px;
+            /* 왼쪽과 오른쪽 영역 사이의 간격 */
+        }
+
+        /* 왼쪽 영역 (제목) */
+        .form-title-area {
+            /* 차지할 공간 비율 */
+            flex: 1;
+            /* 박스 안의 텍스트를 가운데로 정렬 */
+            text-align: center;
+        }
+
+        .form-title-area h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-title-area .description {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* 오른쪽 영역 (입력 폼) */
+        .form-input-area {
+            flex: 1.5;
+            /* 차지할 공간 비율 (입력창이 좀 더 넓도록) */
+        }
+
+        .form-input-area label {
+            font-weight: 700;
+        }
+
+        .form-input-area .form-control {
+            border-radius: 10px;
+        }
+
+        .form-input-area .btn {
+            margin-top: 20px;
+            margin-right: auto;
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        /* 방명록 목록 섹션 */
+        #comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /* 댓글 카드 사이 간격 */
+        }
+
+        .card {
+            border: 1px solid #e0e0e0;
+        }
+
+        .card-header {
+            font-weight: 600;
+            background-color: #fafafa;
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAFWuYMbi1W66XVWx5HwVenvRtORIwGmAE",
+            authDomain: "sparta-268d2.firebaseapp.com",
+            projectId: "sparta-268d2",
+            storageBucket: "sparta-268d2.firebasestorage.app",
+            messagingSenderId: "759168515273",
+            appId: "1:759168515273:web:2235a9122687505034e118",
+            measurementId: "G-H203E37GC1"
+    };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // 기능 1: 댓글 카드 HTML을 생성하는 함수
+        function createCommentCard(name, comment) {
+            return `
+                <div class="card">
+                    <div class="card-header">${name}</div>
+                    <div class="card-body">
+                        <p class="card-text">${comment}</p>
+                    </div>
+                </div>`;
+        }
+
+        // 기능 2: Firestore에서 모든 댓글을 가져와 화면에 표시하는 함수
+        async function displayComments() {
+            const commentList = $('#comment-list');
+            commentList.empty();
+
+            const q = query(collection(db, "hoyong"), orderBy("timestamp", "desc"));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const item = doc.data();
+                const cardHtml = createCommentCard(item.name, item.comment);
+                commentList.append(cardHtml);
+            });
+        }
+
+        // 페이지가 로드되면 댓글 목록을 표시
+        $(document).ready(function () {
+            displayComments();
         });
 
-        let miseurl = "http://spartacodingclub.shop/sparta_api/seoulair";
-        fetch(miseurl).then(res => res.json()).then(data => {
-            let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM'];
-            if (mise) {
-                $('#msg').text(mise);
-            } else {
-                $('#msg').text("데이터 없음");
+        // 기능 3: 'Send Comment' 버튼 클릭 이벤트
+        $("#postingbtn").click(async function () {
+            const name = $('#name').val();
+            const comment = $('#comment').val();
+            const button = $(this);
+
+            if (!name || !comment) {
+                alert("이름과 댓글을 모두 입력해주세요.");
+                return;
             }
-        })
-            .catch(err => {
-                console.error("미세먼지 데이터 가져오기 실패:", err);
-                $('#msg').text("오류 발생");
-            });
-    });
-</script>
-    
+
+            button.prop('disabled', true).text('전송 중...');
+
+            const doc = {
+                'name': name,
+                'comment': comment,
+                'timestamp': new Date()
+            };
+
+            try {
+                await addDoc(collection(db, "hoyong"), doc);
+
+                $('#name').val('');
+                $('#comment').val('');
+
+                const newCardHtml = createCommentCard(name, comment);
+                $('#comment-list').prepend(newCardHtml);
+
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert("댓글 등록에 실패했습니다.");
+            } finally {
+                button.prop('disabled', false).text('Send Comment');
+            }
+        });
+
+    </script>
+</head>
+
 <body>
-    <div class="about">
-        <div class="div">
-            <div class="image"></div>
-            <div class="overlap">
-                <div class="copy">
-                    <div class="text-wrapper">박정은</div>
-                    <a href="https://velog.io/@jjeepp1115/%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84"
-                        target="_blank" rel="noopener noreferrer">
-                        <div class="text-wrapper-2">https://velog.io/@jjeepp1115</div>
-                    </a>
-                </div>
-                <div class="element"></div>
-                <div class="group">
-                    <div class="overlap-group">
-                        <div class="text-wrapper-3">?!</div>
-                    </div>
-                </div>
-                <p class="p">저는 이런 동료들과 함께 성장하고 싶어요!</p>
-                <div class="element-2"></div>
-                <div class="overlap-wrapper">
-                    <div class="div-wrapper">
-                        <div class="text-wrapper-3">?!</div>
-                    </div>
-                </div>
-                <div class="text-wrapper-4">저는 이런 사람이에요!</div>
-                <p class="INTJ">
-                    용의주도한 전략가 타입인 INTJ유형이에요.<br />컴퓨터공학과를 졸업한 초보 개발자입니다. 전공은 했지만 아직
-                    실력이 많이 부족하다고 느끼고 있어서, 요즘 하나씩 다시 배우는 중이에요
-                </p>
-                <p class="text-wrapper-5">
-                    혼자보다는 함께 성장하고 싶은 마음이 커요. 모르는 걸 서로 묻고 답할 수 있고, 실수해도 편하게 이야기할 수
-                    있는 그런 동료들과 함께하고 싶어요. 같이 배우고 같이 성장하면서 좋은 개발자로 한 걸음씩 나아가고 싶습니다.
-                </p>
+    <div class="page-container">
+        <header>
+            <div class="header-title-group">
+                <div class="header-title">Team 7 - Introduction</div>
+                <img class="img" src="img/1.svg ... " />
             </div>
-            <div class="navigation">
-            <a href="main.html" style="text-decoration: none; color: inherit;">
-                <div class="items">
-                    <button class="button">
-                        <div class="text-wrapper-6">Main</div>
-                    </button>
-                </div>
-            </a>
-                <div class="text-wrapper-7">Team 7 - Introduction</div>
-                <img class="img" src="img/1.svg" />
-            </div>
-            <div class="navigation-footer">
-                <div class="items-2">
-                    <div class="text-wrapper-8">Section</div>
-                    <div class="text-wrapper-9">Home</div>
-                    <div class="text-wrapper-9">Features</div>
-                    <div class="text-wrapper-9">Introduce</div>
-                </div>
-                <div class="items-3">
-                    <div class="text-wrapper-8">FAQS</div>
-                    <div class="text-wrapper-9">Q&amp;A</div>
-                    <div class="text-wrapper-9">Guestbook</div>
-                    <div class="text-wrapper-9">Abouts</div>
-                </div>
-                <div class="items-4">
-                    <div class="text-wrapper-8">현재 날씨 : <span id="msg">미세먼지</span></div>
-                    <div class="text-wrapper-9">기온 : <span id="temper">20.00</span>도</div>
-                </div>
-                <img class="divider" src="img/divider.svg" />
-                <div class="text-wrapper-10">Contact Us</div>
-                <div class="social-icons">
-                    <div class="buttons-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-facebook icon-2" viewBox="0 0 16 16">
-                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 
-                                   2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 
-                                   3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 
-                                   1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 
-                                   6.75-7.951" />
-                        </svg>
+            <a href="#" class="btn btn-dark">Main</a>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <!-- 자기소개 텍스트 영역 -->
+                <div class="about-text">
+                    <h1>박정은</h1>
+                    <p class="subtitle">velog.io/@ghdyd6625</p>
+
+                    <div class="about-item">
+                        <!-- 아이콘 -->
+                        <div class="icon-container yellow">?!</div>
+
+                        <h3>저는 이런 사람이에요!</h3>
+                        <p>
+                            용의주도한 전략가 타입인 INTJ유형이에요.<br />컴퓨터공학과를 졸업한 초보 개발자입니다. 전공은 했지만 아직
+                            실력이 많이 부족하다고 느끼고 있어서, 요즘 하나씩 다시 배우는 중이에요
+                        </p>
                     </div>
-                    <div class="buttons-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-github icon-2" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-                                   0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-                                   -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-                                   .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
-                                   -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09
-                                   2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 
-                                   2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 
-                                   1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                        </svg>
-                    </div>
-                    <div class="buttons-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-youtube icon-2" viewBox="0 0 16 16">
-                            <path
-                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
-                        </svg>
-                    </div>
-                    <div class="buttons-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-instagram icon-2" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                        </svg>
+
+                    <!-- 두 번째 항목: 파란색 아이콘 -->
+                    <div class="about-item">
+                        <!-- 아이콘 -->
+                        <div class="icon-container blue">?!</div>
+
+                        <h3>저는 이런 동료들과 함께 성장하고 싶어요!</h3>
+                        <p>
+                            혼자보다는 함께 성장하고 싶은 마음이 커요. 모르는 걸 서로 묻고 답할 수 있고, 실수해도 편하게 이야기할 수
+                            있는 그런 동료들과 함께하고 싶어요. 같이 배우고 같이 성장하면서 좋은 개발자로 한 걸음씩 나아가고 싶습니다.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="list">
-                <div class="row">
-                    <div class="post">
-                        <div class="user">
-                            <div class="avatar">
-                                <div class="frame">
-                                    <div class="title">이건</div>
-                                </div>
-                                <div class="icon-buttons">
-                                    <div class="icon-5">•••</div>
-                                </div>
+                <!-- 자기소개 이미지 영역 -->
+                <div class="about-image">
+                    <!-- 이미지가 있다면 여기에 <img src="..."> 태그를 추가하세요 -->
+                </div>
+            </section>
+
+            <!-- 방명록 입력 폼 (2단 레이아웃으로 재구성) -->
+            <section class="guestbook-form-section">
+                <div class="guestbook-layout-container">
+                    <!-- 왼쪽 영역: 제목 -->
+                    <div class="form-title-area">
+                        <h2>의견을 남겨주세요</h2>
+                        <p class="description">새로운 방명록은 언제나 환영이야 (익명은 안된단다)</p>
+                    </div>
+                    <!-- 오른쪽 영역: 입력 폼 -->
+                    <div class="form-input-area">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
                             </div>
-                        </div>
-                        <div class="text-content">
-                            <div class="title-2">감자가 덜 익었어요</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="post-2">
-                        <div class="user">
-                            <div class="avatar">
-                                <div class="frame">
-                                    <div class="title">이건</div>
-                                </div>
-                                <div class="icon-buttons">
-                                    <div class="icon-5">•••</div>
-                                </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Comment</label>
+                                <input type="text" class="form-control" id="comment" placeholder="Enter your comment">
                             </div>
-                        </div>
-                        <div class="text-content">
-                            <div class="title-2">당근 싫어요</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form">
-                <div class="container">
-                    <div class="title-3">의견을 남겨주세요</div>
-                    <p class="description">새로운 방명록은 언제나 환영이야(익명은 안된단다)</p>
-                </div>
-                <div class="list-2">
-                    <div class="input-wrapper">
-                        <div class="input">
-                            <div class="text-wrapper-11">Name</div>
-                            <div class="textfield">
-                                <div class="text">Enter your name</div>
+                            <div class="d-flex justify-content-end">
+                                <button id="postingbtn" type="button" class="btn btn-dark">Send Comment</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    <div class="input-wrapper">
-                        <div class="input-2">
-                            <div class="text-wrapper-11">Comment</div>
-                            <div class="textfield">
-                                <div class="text">Enter your Comment</div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="primary-wrapper">
-                        <div class="primary">
-                            <div class="title-4">Send Comment</div>
-                        </div>
-                    </button>
                 </div>
-                <img class="vector" src="img/vector-200.svg" />
-            </div>
-        </div>
+            </section>
+
+            <!-- 방명록 목록 -->
+            <section id="comment-list-section">
+                <div id="comment-list">
+                </div>
+            </section>
+        </main>
+
     </div>
 </body>
 
