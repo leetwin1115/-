@@ -666,27 +666,25 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        $(document).ready(function () {
-            let tempurl = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-            fetch(tempurl).then(res => res.json()).then(data => {
-                let temp = data['temp'];
-                $('#temper').text(temp);
-            });
-
-            let miseurl = "http://spartacodingclub.shop/sparta_api/seoulair";
-            fetch(miseurl).then(res => res.json()).then(data => {
-                let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM'];
-                if (mise) {
-                    $('#msg').text(mise);
-                } else {
-                    $('#msg').text("데이터 없음");
-                }
-            })
-                .catch(err => {
-                    console.error("미세먼지 데이터 가져오기 실패:", err);
-                    $('#msg').text("오류 발생");
-                });
+        let tempurl = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(tempurl).then(res => res.json()).then(data => {
+            let temp = data['temp'];
+            $('#temper').text(temp);
         });
+
+        let miseurl = "http://spartacodingclub.shop/sparta_api/seoulair";
+        fetch(miseurl).then(res => res.json()).then(data => {
+            let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM'];
+            if (mise) {
+                $('#msg').text(mise);
+            } else {
+                $('#msg').text("데이터 없음");
+            }
+        })
+            .catch(err => {
+                console.error("미세먼지 데이터 가져오기 실패:", err);
+                $('#msg').text("오류 발생");
+            });
     </script>
 </head>
     
