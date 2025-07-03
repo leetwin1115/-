@@ -4,6 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <title>Ho-Yong Lee</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styleguide.css" />
     <link rel="stylesheet" href="style.css" />
@@ -801,6 +805,30 @@
     }
 </style>
 
+<script>
+    $(document).ready(function () {
+        let tempurl = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(tempurl).then(res => res.json()).then(data => {
+            let temp = data['temp'];
+            $('#temper').text(temp);
+        });
+
+        let miseurl = "http://spartacodingclub.shop/sparta_api/seoulair";
+        fetch(miseurl).then(res => res.json()).then(data => {
+            let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM'];
+            if (mise) {
+                $('#msg').text(mise);
+            } else {
+                $('#msg').text("데이터 없음");
+            }
+        })
+            .catch(err => {
+                console.error("미세먼지 데이터 가져오기 실패:", err);
+                $('#msg').text("오류 발생");
+            });
+    });
+</script>    
+
 <body>
     <div class="about">
         <div class="div">
@@ -858,8 +886,8 @@
                     <div class="text-wrapper-9">Abouts</div>
                 </div>
                 <div class="items-4">
-                    <div class="text-wrapper-8">현재 날씨 :</div>
-                    <div class="text-wrapper-9">기온 :</div>
+                    <div class="text-wrapper-8">현재 날씨 : <span id="msg">미세먼지</span></div>
+                    <div class="text-wrapper-9">기온 : <span id="temper">20.00</span>도</div>
                 </div>
                 <img class="divider" src="img/divider.svg" />
                 <div class="text-wrapper-10">Contact Us</div>
